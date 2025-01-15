@@ -158,14 +158,14 @@
         }
 
         .fit-map-button {
-            padding: 5px 10px; /* Smaller padding */
+            padding: 5px 10px;
             background: #4CAF50;
             border: none;
             border-radius: 5px;
             color: white;
             cursor: pointer;
             margin: 5px;
-            display: none; /* Initially hidden */
+            display: none;
         }
     </style>
 </head>
@@ -195,8 +195,10 @@
                 maxZoom: 18
             }).setView([9.1450, 40.4897], 6);
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap contributors'
+            // Using OpenTopoMap for a topographic map
+            L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenTopoMap contributors',
+                maxZoom: 17,
             }).addTo(map);
 
             markerLayer = L.featureGroup().addTo(map);
